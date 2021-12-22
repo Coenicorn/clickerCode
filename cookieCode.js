@@ -8,6 +8,7 @@ document.addEventListener("keyup",(e)=>{
 
 // display the amount wrinklers have sucked
 (function () {
+    console.log("wrinklers succccs can now be seen");
     if (!Game.wrinklers.length) return;
     var b = document.createElement("h1");
     b.innerHTML = "Coenicorn test";
