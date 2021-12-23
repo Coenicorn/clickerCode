@@ -8,6 +8,7 @@ document.addEventListener("keyup",(e)=>{
 
 // display the amount wrinklers have sucked
 (function () {
+    try{
     console.log("wrinklers succccs can now be seen");
     if (!Game.wrinklers.length) return;
     var b = document.createElement("h1");
@@ -16,6 +17,8 @@ document.addEventListener("keyup",(e)=>{
     b.style.position = "relative";
     b.style.top = "250px";
     b.style.fontSize = "20px";
+    b.ondblclick=Game.CollectWrinklers;
+    b.style.cursor="crosshair";
     b.style.zIndex = 9999999999999;
     document.getElementById("sectionLeft").appendChild(b);
     function update() {
@@ -25,12 +28,14 @@ document.addEventListener("keyup",(e)=>{
             var c = Game.wrinklers[i];
             tt += c.sucked;
         };
-        t += Beautify(tt) + " cookies";
+        t += Beautify(tt) + " cookies, double-click me to collect all";
         b.innerHTML = t;
         requestAnimationFrame(update);
     }; 
     update();
+    }catch(e){throw e}
 })();
+
 
 // scream
 alert("Code added succesfully!");
