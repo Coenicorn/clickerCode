@@ -9,8 +9,7 @@ document.addEventListener("keyup",(e)=>{
 // display the amount wrinklers have sucked
 (function () {
     try{
-    console.log("wrinklers succccs can now be seen");
-    if (!Game.wrinklers.length) return;
+    console.log("wrinkler succccs can now be seen");
     var b = document.createElement("h1");
     b.innerHTML = "Coenicorn test";
     b.style.color = "yellow";
@@ -22,19 +21,24 @@ document.addEventListener("keyup",(e)=>{
     b.style.zIndex = 9999999999999;
     document.getElementById("sectionLeft").appendChild(b);
     function update() {
+        setTimeout(update, 500);
+        var hasWrinklers=0;
+        for(var i=0;i<Game.wrinklers.length;i++){if(Game.wrinklers[i].close){hasWrinklers=1}}
+        if(!hasWrinklers){b.style.visibility="hidden";return;};
+        b.style.visibility="visible";
         var t = "Wrinklers have sucked ";
         var tt = 0;
         for (var i = 0; i < Game.wrinklers.length; i++) {
             var c = Game.wrinklers[i];
             tt += c.sucked;
         };
-        t += Beautify(tt) + " cookies, double-click me to collect all";
+        t += Beautify(tt) + " cookies, click me to collect all";
         b.innerHTML = t;
-        requestAnimationFrame(update);
     }; 
     update();
     }catch(e){throw e}
 })();
+
 
 
 // scream
