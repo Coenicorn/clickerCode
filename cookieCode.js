@@ -9,9 +9,8 @@ document.addEventListener("keyup",(e)=>{
 // display the amount wrinklers have sucked
 (function () {
     try{
-    console.log("wrinkler succccs can now be seen");
+    console.log("wrinkler succcckkkks can now be seen");
     var b = document.createElement("h1");
-    b.innerHTML = "Coenicorn test";
     b.style.color = "yellow";
     b.style.position = "relative";
     b.style.top = "250px";
@@ -32,7 +31,7 @@ document.addEventListener("keyup",(e)=>{
             var c = Game.wrinklers[i];
             tt += c.sucked;
         };
-        t += Beautify(tt) + " cookies, click me to collect all";
+        t += Beautify(tt) + " cookies, double-click me to collect all";
         b.innerHTML = t;
     }; 
     update();
